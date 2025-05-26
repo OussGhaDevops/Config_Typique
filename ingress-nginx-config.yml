@@ -1,4 +1,7 @@
 # https://github.com/kubernetes/ingress-nginx/tree/master/charts/ingress-nginx
+# Installation:
+#  > helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+#  > helm install ingress-nginx  ingress-nginx/ ingress-nginx –namespace  ingress-nginx –create-namespace -f  ingress-nginx-config.yml
 
 controller:
   config:
@@ -8,7 +11,7 @@ controller:
   # Resources limitations/reservations
   resources:
     requests:
-      cpu: 100m      #  a affiniter selon la taille du cluster (voir la consommation du pod ingress via prometheus)
+      cpu: 100m      #  a affiner selon la taille du cluster (voir la consommation du pod ingress via prometheus)
       memory: 90Mi # idem
     limits:
       cpu: 500m #  idem
@@ -41,11 +44,6 @@ controller:
     #   service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
     externalTrafficPolicy: Local
 
-
-
-Installation:.
-helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-helm install ingress-nginx  ingress-nginx/ ingress-nginx –namespace  ingress-nginx –create-namespace -f  ingress-nginx-config.yml
 
 
 # kubernetes/chapitres/15/ingress-nginx-config.yaml at master · EditionsENI/kubernetes · GitHub
