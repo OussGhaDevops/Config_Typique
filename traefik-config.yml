@@ -11,12 +11,12 @@ ingressClass:
   # Set this value to use Traefik as a default Ingress controller
   # isDefaultClass: true
 
-# Update Ingress status
+# Update Ingress status (update the resolution DNS entry with IP of LB), Mandatory for external-dns 
 providers:
   kubernetesIngress:
     publishedService:
       enabled: true
-  # Set this parameter to change the ingress class name
+  # Set this parameter to change the ingress class name for many traefik ingress controller
   # kubernetesCRD:
     # ingressClass: traefik-internal
 
@@ -24,7 +24,7 @@ providers:
 logs:
   # Traefik log level
   # general:
-    # level: DEBUG
+    # level: DEBUG (PANIC, FATAL, ERROR, WARN, INFO)
   access:
     enabled: true
 
